@@ -6,7 +6,35 @@
 }
 
 <h2>Index</h2>
+<h1>Razor Syntax</h1>
+<h2>@DateTime.Now.ToShortDateString()</h2>
 
+@{
+    var date = DateTime.Now.ToShortDateString();
+    var msg = "Hello world";
+    @:Today date is @date<br/>
+    @msg
+}
+<h2>Today date is @date</h2>
+<h3>@msg</h3>
+
+
+@Html.TextBox("StudentName", null, new { @class = "form-control" })
+@*@using AnalyticsProject.Models
+@model Student*@
+@Html.TextArea("Description", null, new { @class="form-control"})  
+@Html.CheckBox("isNewlyEnrolled", true)
+Male:   @Html.RadioButton("Gender", "Male")
+Female: @Html.RadioButton("Gender", "Female")
+
+
+
+
+@*@model AnalyticsProject.Models.Student
+ @Html.TextBoxFor(m => m.StudentName, new { @class="form-control"})*@
+
+@*@Html.TextAreaFor(m => m.StudentName, new { @class = "form-control" })*@
+  
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -14,6 +42,8 @@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.StudentName)
+            
+            
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Age)
